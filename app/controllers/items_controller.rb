@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def new
     if params[:q]
+      response = {}
       response = Amazon::Ecs.item_search(params[:q] , 
                                   :search_index => 'All' , 
                                   :response_group => 'Medium' , 
